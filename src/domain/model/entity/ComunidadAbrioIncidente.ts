@@ -16,13 +16,13 @@ export class ComunidadAbrioIncidente {
   @JoinColumn({ name: 'comunidad_id', referencedColumnName: 'id' })
   comunidad: Comunidad;
 
-  @ManyToOne(() => Incidente, incidente => incidente.comunidadesAbrieronElIncidente)
+  @ManyToOne(() => Incidente, incidente => incidente.comunidadesAbrieronElIncidente, { eager: true })
   @JoinColumn({ name: 'incidente_id', referencedColumnName: 'id' })
   incidente: Incidente;
 
 
   @Column()
-  fueResuelto : boolean
+  fue_resuelto_por_comunidad : boolean
 
 
 }

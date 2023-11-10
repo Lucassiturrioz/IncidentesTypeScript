@@ -17,7 +17,7 @@ export class Comunidad {
     @OneToMany(type => Miembro, (miembro) => miembro.comunidad)
     miembros: Miembro[];
 
-    @OneToMany(type => ComunidadAbrioIncidente, (comunidadAbrioIncidente) => comunidadAbrioIncidente.comunidad)
+    @OneToMany(type => ComunidadAbrioIncidente, (comunidadAbrioIncidente) => comunidadAbrioIncidente.comunidad, { eager: true })
     incidentes: ComunidadAbrioIncidente[];
 
 }

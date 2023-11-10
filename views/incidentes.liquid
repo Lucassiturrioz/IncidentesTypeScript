@@ -1,9 +1,44 @@
 {{> base}}
+{% block content_for_layout %}
 
-{{#block "content"}}
-    <div class="container">
-        <h1>Bienvenido a la Página de Inicio</h1>
-        <p>¡Todo está bonito y lindo!</p>
-        <a href="/incidentes" class="btn btn-primary">Ir a Incidentes</a>
+<section class="bg-light">
+    <div class="container mt-5 mb-5">
+        <h1 class="text-center">Listado de incidentes</h1>
+
+        {% for i in usuario.comunidades %}
+            <a href="#" class="community-link">{{ i.comunidad.nombre }}</a>
+            <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Servicio Afectado</th>
+                    <th>Establecimiento</th>
+                    <th>Motivo</th>
+                    <th>Localización</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for j in i.comunidad.incidentes %}
+                    {% unless j.incidente.fue_resuelto_por_comunidad %}
+                        <tr data-id="{{ incidente.id }}">
+                            <td>{{ j.incidente.servicioIncidentado.nombre }}</td>
+                            <td>{{ j.incidente.servicioIncidentado.establecimiento.nombre }}</td>
+                            <td>{{ j.incidente.motivo_incidente }}</td>
+                            <td>{{ j.incidente.ubicacionDelIncidente.nombre }}</td>
+                        </tr>
+                    {% endunless %}
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endfor %}
+
+        <p>Estos son los incidentes actualmente abiertos en las comunidades de las que eres miembro. Si deseas ver los incidentes ya resueltos por la comunidad, haz clic en la comunidad correspondiente y busca los incidentes resueltos.
+            Service Monitor Argentina
+        </p>
     </div>
-{{/block}}
+</section>
+
+
+
+
+
+{% endblock %}

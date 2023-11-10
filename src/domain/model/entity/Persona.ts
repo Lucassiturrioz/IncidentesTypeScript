@@ -21,8 +21,9 @@ export class Persona {
   @Column()
   numeroTelefono: string;
 
-  @OneToMany(type => Miembro, (miembro) => miembro.persona)
+  @OneToMany(type => Miembro, miembro => miembro.persona, { eager: true })
   comunidades: Miembro[];
+  
   
   // Otras propiedades como Interes, LocalizacionBase, Notificacion, GradoDeConfianza, Foto, etc.
 
