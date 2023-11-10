@@ -1,0 +1,93 @@
+/* Estilos para el encabezado */
+header {
+    background-color: #1e9d7d;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-info {
+    margin-left: 20px;
+}
+
+.user-info p {
+    margin: 0;
+}
+
+#username {
+    font-weight: bold;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Estilos para el cuerpo */
+.main-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.function {
+    flex-basis: 30%;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.function h2 {
+    font-size: 24px;
+}
+
+/* Estilos CSS para el footer */
+footer {
+    position: absolute; /* Cambié "bottom" a "absolute" */
+    bottom: 0;
+    width: 99%;
+    background-color: #ff2f00;
+    color: #fff;
+    padding: 20px 0; /* Puedes ajustar el padding según tus necesidades */
+    text-align: center;
+    z-index: 100;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px; /* Establece la misma altura que el line-height del footer */
+    padding: 0;
+}
+
+.footer-container p {
+    margin-right: 30px; /* Ajusta el valor según tus necesidades */
+}
+
+.social-links {
+    text-align: center;
+}
+
+.social-link img {
+    max-width: 40px;
+    margin-right: 40px;
+}

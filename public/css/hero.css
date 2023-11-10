@@ -1,0 +1,27 @@
+.hero {
+    background-image: url('../img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #000000;
+    text-align: center;
+    padding: 100px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 36px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+
+.hero-content {
+    max-width: 600px; /* Establece un ancho máximo de 600px para el contenido debajo del hero */
+    margin: 0 auto;
+    padding: 20px;
+}

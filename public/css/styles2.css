@@ -1,0 +1,256 @@
+    /* Estilos CSS en el archivo externo styles.css */
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #ff2f00;
+        color: #1e9d7d;
+        padding: 0;
+        line-height: 5px;
+        text-align: center;
+        z-index: 100;
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5px;
+    }
+
+    .logo {
+        display: inline-block;
+    }
+
+    h1 {
+        margin: 0; /* Elimina el margen predeterminado del título */
+        font-family: 'Anton', sans-serif;
+        letter-spacing: 1px;
+    }
+
+    .menu {
+        text-align: right; /* Alinea el menú a la derecha */
+    }
+
+    .menu ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .menu li {
+        display: inline;
+        margin-right: 5px;
+    }
+
+    .menu a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+
+
+    /* Estilos CSS en styles.css para la sección hero */
+    .hero {
+        position: relative;
+        background-image: url('../img/background.jpg');
+        background-size: cover;
+        background-position: center;
+        color: #ff2f00;
+        text-align: center;
+        padding: 100px 0;
+        height: 40vh;
+        display: flex; /* Usamos flexbox para centrar verticalmente el contenido */
+        align-items: center; /* Centramos verticalmente el contenido */
+    }
+    
+    .hero h1 {
+        font-size: 36px;
+    }
+    
+    .hero p {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    
+    .cta-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .cta-button:hover {
+        background-color: #555;
+    }
+    
+    .hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    
+    .hero-content {
+        position: relative;
+        z-index: 1;
+    }
+    
+    /* Estilos CSS para la sección de dos columnas */
+    .two-column-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px;
+    }
+
+    .column {
+        flex-basis: 48%; /* Ajusta el ancho de las columnas según tus necesidades */
+    }
+
+    .image-container img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .two-column-section h2 {
+        font-size: 24px;
+    }
+
+    .two-column-section p {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+
+    .two-column-section .cta-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+    }
+
+    .two-column-section .cta-button:hover {
+        background-color: #555;
+    }
+
+    /* Estilos CSS para la galería de servicios con 2 filas de 4 fotos */
+    .service-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px; /* Reducimos el espacio entre los elementos */
+        padding: 20px;
+    }
+    
+    .service-item {
+        flex-basis: calc(40% - 10px); /* Ajustamos el ancho de cada elemento */
+        text-align: center;
+        border: 1px solid #ccc;
+        padding: 10px;
+        background-color: #f9f9f9;
+    }
+    
+    .service-item img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .service-item h3 {
+        margin-top: 10px;
+        font-size: 18px;
+    }
+    
+
+
+    /* Estilos CSS para el footer */
+    footer {
+        position: bottom;
+        bottom: 0;
+        width: 100%;
+        background-color: #ff2f00;
+        color: #fff;
+        padding: 0;
+        line-height: 20px;
+        text-align: center;
+        z-index: 100;
+    }
+
+    .footer-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80px; /* Establece la misma altura que el line-height del footer */
+        padding: 0;
+    }
+    .footer-container p {
+        margin-right: 30px; /* Ajusta el valor según tus necesidades */
+    }
+
+    .social-links {
+        text-align: center; /* Centra los enlaces social-link horizontalmente */
+    }
+    
+    .social-link img {
+        max-width: 40px;
+        margin-right: 40px;
+    }
+
+
+
+
+    /* Estilos CSS en el archivo externo styles.css */
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header {
+        background-color: #1e9d7d;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo img {
+        max-width: 100px;
+    }
+
+    .nav-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-list li {
+        display: inline;
+        margin-right: 20px;
+    }
+
+    .nav-list a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+    }
+
+   
+    /* Agrega más estilos según tus necesidades */
