@@ -1,11 +1,12 @@
-<<<<<<< HEAD
-# IncidentesTypeScript
-=======
-# Awesome Project Build with TypeORM
+Mismo TP distinto stack tecnologico 
 
-Steps to run this project:
+Para poder ejecutar 
 
-1. Run `npm i` command
-2. Setup database settings inside `data-source.ts` file
-3. Run `npm start` command
->>>>>>> master
+npm start
+
+Rutas que funcionan
+/
+/index
+/incidentes
+/login
+
