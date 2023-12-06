@@ -22,7 +22,8 @@ export class LoginController {
 
           const userRepository = AppDataSource.getRepository(Persona)
           const usuario = await userRepository.findOneBy({ correoElectronico , contrasenia })
-      
+
+
 
           if (usuario) {
             req.session.correoElectronico = correoElectronico
@@ -31,7 +32,6 @@ export class LoginController {
       
             res.redirect('/index');
           } else {
-            // Limpiar la sesión y redirigir a la página de inicio de sesión
             req.correoElectronico = undefined;
             req.id = undefined;
             res.redirect('/login');

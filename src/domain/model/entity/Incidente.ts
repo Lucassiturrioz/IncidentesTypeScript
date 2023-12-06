@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToOne, JoinColumn } from "typeorm"
 import { ComunidadAbrioIncidente } from "./ComunidadAbrioIncidente"
-import { ServicioPrestado } from "./Servicio"
+import { ServicioPrestado } from "./ServicioPrestado"
 
 @Entity({ name: "incidente" })
 export class Incidente {

@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToOne, JoinColumn, ManyToMany } from 'typeorm';
 import { Miembro } from './Miembro';
-import {ServicioPrestado } from './Servicio';
+import {ServicioPrestado } from './ServicioPrestado';
 
 @Entity({ name: "establecimientos" })
 export class Establecimiento {

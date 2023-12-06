@@ -1,21 +1,18 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToOne, JoinColumn, ManyToMany } from 'typeorm';
-import { Establecimiento } from './Establecimiento';
-import { Incidente } from './Incidente';
+import { ServicioPrestado } from './ServicioPrestado';
 
-@Entity({ name: "servicioprestado" })
-export class ServicioPrestado {
+@Entity({ name: "servicios" })
+export class Servicios {
  
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  nombre: string;
+  nombre: string;  
 
-  @ManyToOne(() => Establecimiento, (establecimiento) => establecimiento.servicios, { eager: true })
-  @JoinColumn({ name: 'establecimiento_id', referencedColumnName: 'id' })
-  establecimiento: Establecimiento;
+  @OneToMany(type => ServicioPrestado, (servicioPrestado) => servicioPrestado.servicio)
+  servicios: ServicioPrestado[];
 
-  @OneToMany(type => Incidente, (incidente) => incidente.servicioIncidentado)
-  incidentes: Incidente[];
+  
 
 }

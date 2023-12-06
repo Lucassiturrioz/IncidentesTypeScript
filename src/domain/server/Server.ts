@@ -2,6 +2,7 @@ import { Application } from 'express';
 import {Liquid} from 'liquidjs';
 import session from 'express-session';
 import { Router } from './Router';
+import path = require('path');
 
 export class Servidor {
     public static app: Application | null = null;
@@ -46,7 +47,9 @@ export class Servidor {
     }
 
     private static configureStaticFiles(): void {
-        this.app.use(this.express.static('../public'));
+
+        const publicPath = path.join(__dirname, '../../../public');
+        this.app.use('/static', this.express.static(publicPath));
     }
 }
 

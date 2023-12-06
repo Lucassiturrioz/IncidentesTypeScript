@@ -1,5 +1,4 @@
 import { AppDataSource } from "./data-source"
-import { Persona } from "./domain/model/entity/Persona";
 import { Servidor } from "./domain/server/Server";
 
 
