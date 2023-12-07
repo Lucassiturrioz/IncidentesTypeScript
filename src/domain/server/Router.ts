@@ -13,9 +13,11 @@ export class Router {
 
     Servidor.app.get('/login', (req, res) => { FactoryController.controller('Login').show(req,res); });
     Servidor.app.post('/login',  (req, res) => { FactoryController.controller('Login').manejarInicioSesion(req,res); })
+    Servidor.app.get('/cerrar-sesion', (req, res) => { FactoryController.controller('Login').manejarCierreSesion(req,res); } )    
 
     Servidor.app.get('/incidentes', (req, res) => { FactoryController.controller('Incidente').show(req,res)} )
    
+
 
     }
 

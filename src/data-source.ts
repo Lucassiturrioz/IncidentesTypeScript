@@ -8,6 +8,7 @@ import { ComunidadAbrioIncidente } from "./domain/model/entity/ComunidadAbrioInc
 import { ServicioPrestado } from "./domain/model/entity/ServicioPrestado"
 import { Establecimiento } from "./domain/model/entity/Establecimiento"
 import { Servicios } from "./domain/model/entity/Servicio"
+import { Localizacion } from "./domain/model/entity/Localizacion"
 
 
 export const AppDataSource = new DataSource({
@@ -19,7 +20,7 @@ export const AppDataSource = new DataSource({
     database: "test",
     synchronize: false,
     logging: false,
-    entities: [Persona, Comunidad, Miembro,Incidente,ComunidadAbrioIncidente, Incidente, ServicioPrestado, Establecimiento, Servicios],
+    entities: [Persona, Comunidad, Miembro,Incidente,ComunidadAbrioIncidente, Incidente, ServicioPrestado, Establecimiento, Servicios, Localizacion],
     migrations: [],
     subscribers: [],
 })

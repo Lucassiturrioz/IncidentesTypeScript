@@ -39,4 +39,10 @@ export class LoginController {
        
     }
 
+    public async manejarCierreSesion(req, res): Promise<void> {
+      req.session.destroy()
+      delete req.correoElectronico;
+      delete req.id;
+      res.redirect('/login');
+    }
 }

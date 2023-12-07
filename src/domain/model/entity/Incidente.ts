@@ -1,6 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToOne, JoinColumn } from "typeorm"
 import { ComunidadAbrioIncidente } from "./ComunidadAbrioIncidente"
 import { ServicioPrestado } from "./ServicioPrestado"
+import { Localizacion } from "./Localizacion"
 
 @Entity({ name: "incidente" })
 export class Incidente {
@@ -20,4 +21,11 @@ export class Incidente {
     @ManyToOne(() => ServicioPrestado, (servicio) => servicio.incidentes, { eager: true })
     @JoinColumn({ name: 'servicioPrestado_id' })
     servicioIncidentado: ServicioPrestado;
+
+
+    @ManyToOne(() => Localizacion, (localizacion) => localizacion.incidentes, { eager: true })
+    @JoinColumn({ name: 'localizacion_id' })
+    localizacion: Localizacion;
+
+
 }

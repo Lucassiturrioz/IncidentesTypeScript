@@ -8,11 +8,8 @@ export class IncidenteController {
         const id = req.session.userId
         const userRepository = AppDataSource.getRepository(Persona)
         const usuario = await userRepository.findOneBy({id: id })
-
        
-    
         const model = {
-            // Tu modelo de datos aquí
             usuario : usuario
         };
 

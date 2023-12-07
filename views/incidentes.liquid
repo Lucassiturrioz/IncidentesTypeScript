@@ -101,7 +101,7 @@
     <div class="container mt-5 mb-5">
         <h1 class="text-center">Listado de incidentes</h1>
         <button id="toggle-btn" class="btn-green">Incidentes Abiertos</button>
-
+        <br><br>
         {% for i in usuario.comunidades %}
             <a href="#" class="community-link">{{ i.comunidad.nombre }}</a>
             <table class="table table-bordered table-striped">
@@ -115,18 +115,18 @@
                 </thead>
                 <tbody>
                 {% for j in i.comunidad.incidentes %}
-                    {% unless j.incidente.fue_resuelto_por_comunidad %}
-                        <tr data-id="{{ incidente.id }}">
-                            <td>{{ j.incidente.servicioIncidentado.nombre }}</td>
-                            <td>{{ j.incidente.servicioIncidentado.establecimiento.nombre }}</td>
-                            <td>{{ j.incidente.motivo_incidente }}</td>
-                            <td>{{ j.incidente.ubicacionDelIncidente.nombre }}</td>
-                        </tr>
-                    {% endunless %}
+                    {% assign resuelto = j.Fecha_De_Cierre_Comunidad | default: false %}
+                    <tr data-id="{{ j.incidente.id }}" data-resuelto="{{ resuelto }}">
+                        <td>{{ j.incidente.servicioIncidentado.servicio.nombre }}</td>
+                        <td>{{ j.incidente.servicioIncidentado.establecimiento.nombre }}</td>
+                        <td>{{ j.incidente.motivo_incidente }}</td>
+                        <td>{{ j.incidente.localizacion.nombre }}</td>
+                    </tr>
                 {% endfor %}
                 </tbody>
             </table>
         {% endfor %}
+        
 
         <p>Estos son los incidentes actualmente abiertos en las comunidades de las que eres miembro. Si deseas ver los incidentes ya resueltos por la comunidad, haz clic en la comunidad correspondiente y busca los incidentes resueltos.
             Service Monitor Argentina
@@ -201,39 +201,28 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const toggleBtn = document.getElementById('toggle-btn');
-        const incidentes = document.querySelectorAll('tr[data-id]');
 
         toggleBtn.addEventListener('click', function () {
-            if (toggleBtn.classList.contains('btn-green')) {
-                toggleBtn.classList.remove('btn-green');
-                toggleBtn.classList.add('btn-blue');
-                toggleBtn.textContent = 'Incidentes Cerrados';
+            const isOpen = toggleBtn.classList.contains('btn-green');
+            const rows = document.querySelectorAll('tr[data-resuelto]');
+            
+            rows.forEach(row => {
+                const isResolved = row.getAttribute('data-resuelto') === 'false';
+                if ((isOpen && !isResolved) || (!isOpen && isResolved)) {
+                    row.style.display = 'table-row';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
 
-                incidentes.forEach(function (incidente) {
-                    const fueResuelto = incidente.querySelector('td:last-child').textContent;
-                    if (fueResuelto === 'true') {
-                        incidente.style.display = 'none';
-                    } else {
-                        incidente.style.display = 'table-row';
-                    }
-                });
-            } else {
-                toggleBtn.classList.remove('btn-blue');
-                toggleBtn.classList.add('btn-green');
-                toggleBtn.textContent = 'Incidentes Abiertos';
-
-                incidentes.forEach(function (incidente) {
-                    const fueResuelto = incidente.querySelector('td:last-child').textContent;
-                    if (fueResuelto === 'false') {
-                        incidente.style.display = 'none';
-                    } else {
-                        incidente.style.display = 'table-row';
-                    }
-                });
-            }
+            // Toggle button style and text
+            toggleBtn.classList.toggle('btn-green');
+            toggleBtn.classList.toggle('btn-blue');
+            toggleBtn.textContent = isOpen ? 'Incidentes Cerrados' : 'Incidentes Abiertos';
         });
     });
 </script>
+
 <script src="/static/js/jquery-1.11.0.min.js"></script>
 <script src="/static/js/jquery-migrate-1.2.1.min.js"></script>
 <script src="/static/js/bootstrap.bundle.min.js"></script>

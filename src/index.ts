@@ -9,7 +9,7 @@ AppDataSource.initialize().then(async () => {
    Servidor.iniciar()
         
    Servidor.app.listen(3000)
-
+   console.log("Servidor abierto puerto escucha 3000")
     
 
 }).catch(error => console.log(error))

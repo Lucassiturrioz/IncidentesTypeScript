@@ -2,6 +2,7 @@ import { Entity, Column, ManyToOne, PrimaryColumn, Index, JoinColumn } from "typ
 import { Comunidad } from "./Comunidad"
 import { Incidente } from "./Incidente"
 import 'reflect-metadata'
+import { Miembro } from "./Miembro";
 
 @Entity({ name: "comunidadesabrieronincidente" })
 export class ComunidadAbrioIncidente {
@@ -20,6 +21,8 @@ export class ComunidadAbrioIncidente {
   @JoinColumn({ name: 'incidente_id', referencedColumnName: 'id' })
   incidente: Incidente;
 
+  @Column()
+  Fecha_De_Cierre_Comunidad : Date
 
   @Column()
   fue_resuelto_por_comunidad : boolean

@@ -1,5 +1,4 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToOne, JoinColumn, ManyToMany } from 'typeorm';
-import { Miembro } from './Miembro';
 import {ServicioPrestado } from './ServicioPrestado';
 
 @Entity({ name: "establecimientos" })

@@ -48,7 +48,7 @@ export class Servidor {
 
     private static configureStaticFiles(): void {
 
-        const publicPath = path.join(__dirname, '../../../public');
+        const publicPath = path.join(__dirname, '../../../static');
         this.app.use('/static', this.express.static(publicPath));
     }
 }
