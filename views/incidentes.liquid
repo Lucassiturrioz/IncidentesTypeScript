@@ -115,7 +115,7 @@
                 </thead>
                 <tbody>
                 {% for j in i.comunidad.incidentes %}
-                    {% assign resuelto = j.Fecha_De_Cierre_Comunidad | default: false %}
+                    {% assign resuelto = j.fecha_de_cierre_comunidad | default: false %}
                     <tr data-id="{{ j.incidente.id }}" data-resuelto="{{ resuelto }}">
                         <td>{{ j.incidente.servicioIncidentado.servicio.nombre }}</td>
                         <td>{{ j.incidente.servicioIncidentado.establecimiento.nombre }}</td>
@@ -127,10 +127,8 @@
             </table>
         {% endfor %}
         
-
-        <p>Estos son los incidentes actualmente abiertos en las comunidades de las que eres miembro. Si deseas ver los incidentes ya resueltos por la comunidad, haz clic en la comunidad correspondiente y busca los incidentes resueltos.
-            Service Monitor Argentina
-        </p>
+       <br><br>     
+       <center> <p>Estos son los incidentes actualmente en el sistema</p> </center>
     </div>
 </section>
 

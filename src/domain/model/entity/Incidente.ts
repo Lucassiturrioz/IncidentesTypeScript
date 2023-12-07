@@ -19,7 +19,7 @@ export class Incidente {
     comunidadesAbrieronElIncidente : ComunidadAbrioIncidente[];
 
     @ManyToOne(() => ServicioPrestado, (servicio) => servicio.incidentes, { eager: true })
-    @JoinColumn({ name: 'servicioPrestado_id' })
+    @JoinColumn({ name: 'servicioprestado_id' })
     servicioIncidentado: ServicioPrestado;
 
 

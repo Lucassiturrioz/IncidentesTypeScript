@@ -12,15 +12,19 @@ import { Localizacion } from "./domain/model/entity/Localizacion"
 
 
 export const AppDataSource = new DataSource({
-    type: "mariadb",
-    host: "localhost",
-    port: 3306,
-    username: "root",
-    password: "",
-    database: "test",
+    type: "postgres",
+    host: "dpg-cll3oa4jtl8s73f71qog-a.oregon-postgres.render.com",
+    port: 5432,
+    username: "base_f5mi_user",
+    password: "Jt6ImpAjMYJntAKVjsk1WlUwPzgYm0jT",
+    database: "base_f5mi",
     synchronize: false,
     logging: false,
     entities: [Persona, Comunidad, Miembro,Incidente,ComunidadAbrioIncidente, Incidente, ServicioPrestado, Establecimiento, Servicios, Localizacion],
     migrations: [],
     subscribers: [],
+    ssl: {
+        rejectUnauthorized: false, // You might need to adjust this based on your certificate setup
+      },
+    
 })

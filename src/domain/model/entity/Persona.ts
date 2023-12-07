@@ -13,13 +13,13 @@ export class Persona {
   apellido: string;
 
   @Column()
-  correoElectronico: string;
+  correoelectronico: string;
 
   @Column()
   contrasenia: string;
 
   @Column()
-  numeroTelefono: string;
+  numerotelefono: string;
 
   @OneToMany(type => Miembro, miembro => miembro.persona, { eager: true })
   comunidades: Miembro[];

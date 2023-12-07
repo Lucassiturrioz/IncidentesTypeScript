@@ -22,7 +22,7 @@ export class ComunidadAbrioIncidente {
   incidente: Incidente;
 
   @Column()
-  Fecha_De_Cierre_Comunidad : Date
+  fecha_de_cierre_comunidad : Date
 
   @Column()
   fue_resuelto_por_comunidad : boolean
