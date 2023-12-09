@@ -9,6 +9,8 @@ export class IncidenteController {
         const userRepository = AppDataSource.getRepository(Persona)
         const usuario = await userRepository.findOneBy({id: id })
        
+        console.log(usuario)
+
         const model = {
             usuario : usuario
         };

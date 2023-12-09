@@ -21,10 +21,9 @@ export class LoginController {
           const { correoelectronico, contrasenia } = req.body
 
           const userRepository = AppDataSource.getRepository(Persona)
-          const usuario = await userRepository.findOneBy({ correoelectronico , contrasenia })
+          const usuario = await userRepository.findOneBy({ correoelectronico : correoelectronico , contrasenia : contrasenia })
 
-
-
+  
           if (usuario) {
             req.session.correoelectronico = correoelectronico
             req.session.userId  = usuario.id
